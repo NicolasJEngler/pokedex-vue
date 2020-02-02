@@ -29,7 +29,15 @@ export default {
   },
   methods: {
     searchPokemon: function() {
-      // Pending: filter on input keyup search value
+      let inputValue = this.search;
+
+      Pokedex.forEach(pokemon => {
+        if (pokemon.name.toLowerCase().includes(inputValue.toLowerCase())) {
+          pokemon.hidden = false;
+        } else {
+          pokemon.hidden = true;
+        }
+      });
     }
   }
 }
@@ -69,10 +77,11 @@ ul {
 }
 
 [class^="type"] {
-  padding: 7px 12px;
+  padding: 0 8px;
+  line-height: 20px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1);
   color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: bold;
   font-size: 12px;
   margin: 0 5px;
