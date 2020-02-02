@@ -1,22 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Pokedex msg="Pokédex"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Pokedex from './components/Pokedex.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Pokedex
   }
 }
 </script>
 
 <style>
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,5 +36,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-image: linear-gradient(135deg, #c5d6fb 0%,#c1face 69%,#bdfbc0 100%);
+  height: 100vh;
+  overflow: auto;
+  margin: 0;
+  padding: 30px;
 }
 </style>
